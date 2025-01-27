@@ -1,0 +1,114 @@
+/* branchEditDialog.component.css */
+
+/* Overall form container with dark theme */
+.form-container {
+  background-color: #2c2c2c; /* Dark background for the form */
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto; /* Center the form */
+  color: #fff; /* Light text for dark theme */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+}
+
+/* Heading style */
+h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  color: #00bcd4; /* Accent color */
+  margin-bottom: 20px;
+}
+
+/* Styling for form fields */
+.form-field {
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+label {
+  display: block;
+  font-size: 1.1rem;
+  color: #bbb; /* Lighter label color */
+  margin-bottom: 5px;
+}
+
+/* Input field styling */
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #424242;
+  color: #fff;
+  font-size: 1.1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Focus state for input fields */
+input:focus {
+  border-color: #00bcd4; /* Accent color on focus */
+  box-shadow: 0 0 8px rgba(0, 188, 212, 0.6); /* Glowing effect on focus */
+}
+
+/* Button container */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* Button styling */
+button {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+/* Cancel button (red) */
+.cancel-btn {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background-color: #e53935;
+}
+
+/* Save button (green) */
+.save-btn {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.save-btn:hover {
+  background-color: #45a049;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 20px;
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  input {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}

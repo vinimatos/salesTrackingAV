@@ -1,0 +1,33 @@
+<div class="form-container">
+  <h3 class="form-title">Branch Registered</h3>
+
+  <!-- Display the branch list -->
+  <div id="listBranch">
+    <div *ngFor="let branch of getPagedBranchs()" class="branch-card">
+      <div style="display: none;">
+        <p>{{branch.id}}</p>
+      </div>
+      <div class="branch-header">
+        <h4>{{ branch.name }}</h4>
+      </div>
+      <div class="branch-body">
+        <p><strong>Name:</strong> {{ branch.name }}</p>
+        <p><strong>Location:</strong> {{ branch.location }}</p>
+      </div>
+      <!-- Edit Button -->
+      <div class="branch-footer">
+        <button (click)="editBranch(branch)" class="edit-btn">Edit</button>
+      </div>
+      <div class="branch-footer">
+        <button (click)="removeBranch(branch)" class="edit-btn">Remover</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination controls -->
+  <div class="pagination-controls">
+    <button (click)="goToPage(currentPage - 1)" [disabled]="isFirstPage()">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="goToPage(currentPage + 1)" [disabled]="isLastPage()">Next</button>
+  </div>
+</div>

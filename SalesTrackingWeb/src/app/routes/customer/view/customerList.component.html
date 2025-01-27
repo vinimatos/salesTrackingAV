@@ -1,0 +1,33 @@
+<div class="form-container">
+  <h3 class="form-title">Customer Registered</h3>
+
+  <!-- Display the customer list -->
+  <div id="listCustomer">
+    <div *ngFor="let customer of customers" class="customer-card">
+      <div style="display: none;">
+        <p>{{customer.id}}</p>
+      </div>
+      <div class="customer-header">
+        <h4>{{ customer.name }}</h4>
+      </div>
+      <div class="customer-body">
+        <p><strong>Email:</strong> {{ customer.email }}</p>
+        <p><strong>Phone:</strong> {{ customer.phoneNumber }}</p>
+      </div>
+      <!-- Edit Button -->
+      <div class="customer-footer">
+        <button (click)="editCustomer(customer)" class="edit-btn">Edit</button>
+      </div>
+      <div class="customer-footer">
+        <button (click)="removeCustomer(customer)" class="edit-btn">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination controls -->
+  <div class="pagination-controls">
+    <button (click)="goToPage(currentPage - 1)" [disabled]="isFirstPage()">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="goToPage(currentPage + 1)" [disabled]="isLastPage()">Next</button>
+  </div>
+</div>

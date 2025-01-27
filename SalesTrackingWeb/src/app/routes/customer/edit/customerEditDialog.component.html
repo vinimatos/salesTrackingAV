@@ -1,0 +1,21 @@
+<div class="form-container">
+  <h2>Edit Customer</h2>
+  <form [formGroup]="editForm">
+    <div class="form-field">
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" />
+    </div>
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" />
+    </div>
+    <div class="form-field">
+      <label for="phoneNumber">Phone Number</label>
+      <input id="phoneNumber" formControlName="phoneNumber" />
+    </div>
+    <div class="form-actions">
+      <button class="cancel-btn" (click)="close()">Cancel</button>
+      <button class="save-btn" (click)="save()">Save</button>
+    </div>
+  </form>
+</div>

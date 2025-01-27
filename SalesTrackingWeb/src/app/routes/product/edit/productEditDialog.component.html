@@ -1,0 +1,29 @@
+<div class="form-container">
+  <h2>Edit Product</h2>
+  <form [formGroup]="editForm">
+    <div class="form-field">
+      <label for="title">Title</label>
+      <input id="title" formControlName="title" />
+    </div>
+    <div class="form-field">
+      <label for="description">Description</label>
+      <input id="description" formControlName="description" />
+    </div>
+    <div class="form-field">
+      <label for="price">Price</label>
+      <input id="price" formControlName="price" />
+    </div>
+    <div class="form-field">
+      <label for="rate">Rate</label>
+      <input id="rate" formControlName="rate" />
+    </div>
+    <div class="form-field">
+      <label for="count">Count</label>
+      <input id="count" formControlName="count" />
+    </div>
+    <div class="form-actions">
+      <button class="cancel-btn" (click)="close()">Cancel</button>
+      <button class="save-btn" (click)="save()">Save</button>
+    </div>
+  </form>
+</div>

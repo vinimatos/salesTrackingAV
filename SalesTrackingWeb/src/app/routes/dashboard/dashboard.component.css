@@ -1,0 +1,152 @@
+.dark-card {
+    background-color: #424242; /* Dark grey background */
+    color: #ffffff; /* White text for readability */
+  }
+  
+  .dark-card mat-card-title,
+  .dark-card mat-card-content,
+  .dark-card mat-card-actions button {
+    color: #ffffff;
+  }
+  
+  .dark-card h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffc107; /* Accent color for emphasis */
+  }
+  
+  .dark-card button {
+    color: #03a9f4; /* Different color for buttons */
+  }
+  
+  /* General container and layout */
+  mat-drawer-container {
+      height: 100%;
+      background-color: #2a2a2a; /* Dark background for the whole container */
+    }
+    
+    /* Drawer styling */
+    mat-drawer {
+      background-color: #333; /* Dark background color for the drawer */
+      width: 280px;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+      padding: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    /* Drawer header */
+    .drawer-header {
+      text-align: center;
+      padding: 20px 0;
+    }
+    
+    .drawer-header h3 {
+      color: #f1f1f1; /* Light text color for the header */
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    /* Navigation links styling */
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      padding: 0 20px;
+    }
+    
+  /* General button styling */
+  .nav-button {
+      background-color: #4CAF50; /* Primary green background */
+      color: white; /* White text color */
+      font-size: 16px; /* Font size */
+      font-weight: 600; /* Slightly bold text */
+      padding: 12px 24px; /* Spacious padding for better click area */
+      border-radius: 8px; /* Rounded corners */
+      border: none; /* Remove default border */
+      text-align: center; /* Center-align text */
+      width: 100%; /* Full width */
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for interactive effects */
+      display: inline-block; /* Inline-block for layout flexibility */
+      cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  /* Button hover effect */
+  .nav-button:hover {
+      background-color: #24962a; /* Darker green on hover */
+      transform: translateY(-2px); /* Slight lift effect on hover */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Button active effect (when clicked) */
+  .nav-button:active {
+      transform: translateY(1px); /* Button slightly presses down */
+      box-shadow: none; /* Remove shadow when active */
+  }
+  
+  /* Button focus effect (for accessibility) */
+  .nav-button:focus {
+      outline: none; /* Remove default outline */
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.4); /* Soft green focus outline */
+  }
+  
+  /* Disabled state */
+  .nav-button:disabled {
+      background-color: #9e9e9e; /* Disabled button color */
+      cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+      box-shadow: none; /* No shadow for disabled state */
+  }
+  
+  /* Optional smaller size for compact layout */
+  .nav-button.smaller {
+      padding: 8px 16px; /* Reduce padding */
+      font-size: 14px; /* Smaller text */
+  }
+  
+  /* For mobile responsiveness */
+  @media (max-width: 768px) {
+      .nav-button {
+          font-size: 14px; /* Slightly smaller font size on mobile */
+          padding: 10px 18px; /* Adjust padding on mobile for better spacing */
+      }
+  }
+  
+    
+    /* Content area styling */
+    mat-drawer-content {
+      padding: 20px 30px;
+      background-color: #121212; /* Dark background for content area */
+      color: #f1f1f1; /* Light text color */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for content area */
+      border-radius: 8px;
+      overflow-y: auto;
+    }
+    
+    /* Dividers for separation */
+    mat-divider {
+      background-color: #555; /* Dark divider color */
+    }
+    
+    /* Media query for responsiveness */
+    @media (max-width: 768px) {
+      mat-drawer {
+        width: 250px; /* Smaller drawer width on mobile */
+      }
+    
+      mat-drawer-container {
+        flex-direction: column; /* Stack drawer and content vertically on mobile */
+      }
+    
+      mat-drawer-content {
+        padding: 15px;
+      }
+    
+      .nav-links {
+        align-items: center; /* Center-align navigation buttons on smaller screens */
+      }
+    
+      .nav-button {
+        font-size: 14px; /* Adjust font size for mobile */
+        padding: 10px 16px; /* Adjust padding for mobile */
+      }
+    }
+    

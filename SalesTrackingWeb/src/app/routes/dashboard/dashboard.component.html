@@ -1,0 +1,57 @@
+<mat-drawer-container>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+    <div id="dashboard" class="dashboard-container" >
+      <div class="dashboard-cards">
+        <mat-card class="dashboard-card dark-card">
+          <mat-card-title>Customer</mat-card-title>
+          <mat-card-content>
+            <h2>{{ customers }}</h2>
+            <p>Total Registered Customers</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button routerLink="/customer-list">View List</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="dashboard-card dark-card">
+          <mat-card-title>Order</mat-card-title>
+          <mat-card-content>
+            <h2>{{ orders }}</h2>
+            <p>Total Registered Orders</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button routerLink="/order-list">View List</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="dashboard-card dark-card">
+          <mat-card-title>Products</mat-card-title>
+          <mat-card-content>
+            <h2>{{ products }}</h2>
+            <p>Total Registered Products</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button routerLink="/product-list">View List</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<style>
+  .dashboard-container {
+    padding: 16px;
+  }
+
+  .dashboard-cards {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .dashboard-card {
+    width: 300px;
+  }
+</style>

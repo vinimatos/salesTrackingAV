@@ -1,0 +1,32 @@
+2025-01-27 00:03:22.805 -03:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2025-01-27 00:03:22.963 -03:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager User profile is available. Using 'C:\Users\Daniel Henrique\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-27 00:03:23.119 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: https://localhost:7181
+2025-01-27 00:03:23.122 -03:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:5119
+2025-01-27 00:03:23.196 -03:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-01-27 00:03:23.198 -03:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-01-27 00:03:23.199 -03:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\Users\Daniel Henrique\Documents\dev\abi-gth-omnia-developer-evaluation (2) (2)\template\backend\src\Ambev.DeveloperEvaluation.WebApi
+2025-01-27 00:03:26.569 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 OPTIONS https://localhost:7181/api/product/update/b04e55ed-ac62-4e6f-b7f0-4dad2131128a - null null
+2025-01-27 00:03:26.644 -03:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-01-27 00:03:26.656 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 OPTIONS https://localhost:7181/api/product/update/b04e55ed-ac62-4e6f-b7f0-4dad2131128a - 204 null null 88.8202ms
+2025-01-27 00:03:26.668 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/2 PUT https://localhost:7181/api/product/update/b04e55ed-ac62-4e6f-b7f0-4dad2131128a - application/json 162
+2025-01-27 00:03:26.685 -03:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-01-27 00:03:26.735 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Products.ProductController.UpdateProduct (Ambev.DeveloperEvaluation.WebApi)'
+2025-01-27 00:03:26.777 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "UpdateProduct", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProduct(System.Guid, Ambev.DeveloperEvaluation.WebApi.Features.Products.UpdateProduct.UpdateProductRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Products.ProductController (Ambev.DeveloperEvaluation.WebApi).
+2025-01-27 00:03:29.120 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (74ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Category", p."Description", p."Image", p."Price", p."RatingId", p."Title", r."Id", r."Count", r."Rate"
+FROM "Products" AS p
+INNER JOIN "Ratings" AS r ON p."RatingId" = r."Id"
+WHERE p."Id" = @__id_0
+LIMIT 1
+2025-01-27 00:03:29.388 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (9ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?', @p4='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Products" SET "Title" = @p0
+WHERE "Id" = @p1;
+UPDATE "Ratings" SET "Count" = @p2, "Rate" = @p3
+WHERE "Id" = @p4;
+2025-01-27 00:03:29.443 -03:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (4ms) [Parameters=[@p6='?' (DbType = Guid), @p0='?', @p1='?', @p2='?', @p3='?' (DbType = Decimal), @p4='?' (DbType = Guid), @p5='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Products" SET "Category" = @p0, "Description" = @p1, "Image" = @p2, "Price" = @p3, "RatingId" = @p4, "Title" = @p5
+WHERE "Id" = @p6;
+2025-01-27 00:03:29.462 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing CreatedResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Features.Products.UpdateProduct.UpdateProductResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-27 00:03:29.489 -03:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Products.ProductController.UpdateProduct (Ambev.DeveloperEvaluation.WebApi) in 2694.1641ms
+2025-01-27 00:03:29.496 -03:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Products.ProductController.UpdateProduct (Ambev.DeveloperEvaluation.WebApi)'
+2025-01-27 00:03:29.528 -03:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/2 PUT https://localhost:7181/api/product/update/b04e55ed-ac62-4e6f-b7f0-4dad2131128a - 201 null application/json; charset=utf-8 2859.8296ms

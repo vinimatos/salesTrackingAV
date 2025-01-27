@@ -1,0 +1,53 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" opened>
+    <nav class="drawer-nav">
+      <div class="drawer-header">
+        <h3>Sales Tracking</h3>
+      </div>
+      <mat-divider></mat-divider>
+      <br>
+      <div class="nav-links">
+        <button routerLink="/dashboard"class="nav-button">
+          <span>Dashboard</span>
+        </button>
+        <br>
+        <button routerLink="/customer" class="nav-button">
+          <span> Customer</span>
+        </button>
+        <br>
+        <button routerLink="/product" class="nav-button">
+          <span> Product</span>
+        </button>
+        <br>
+        <button routerLink="/order" class="nav-button">
+          <span>Order</span>
+        </button>
+        <br>
+        <button routerLink="/report" class="nav-button">
+          <span>Report</span>
+        </button>
+      </div>
+    </nav>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<style>
+  .dashboard-container {
+    padding: 16px;
+  }
+
+  .dashboard-cards {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .dashboard-card {
+    width: 300px;
+  }
+</style>

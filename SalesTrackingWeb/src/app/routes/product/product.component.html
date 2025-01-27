@@ -1,0 +1,38 @@
+<div class="form-container">
+  <h3 class="form-title">Product Registration Form</h3>
+
+  <form [formGroup]="productForm" class="product-register-form">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input id="title" formControlName="title" type="text" placeholder="Enter product title" class="form-input" />
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input id="price" formControlName="price" type="number" placeholder="Enter price" class="form-input" />
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input id="description" formControlName="description" type="text" placeholder="Enter Description"
+        class="form-input" />
+    </div>
+    <div class="form-group">
+      <label for="image">Image:</label>
+      <input id="image" formControlName="image" type="file" placeholder="Enter image"
+        class="form-input" />
+    </div>
+    <div class="form-group">
+      <label for="image">Rate:</label>
+      <input id="image" formControlName="rate" type="number" placeholder="Enter rate"
+        class="form-input" />
+    </div>
+    <div class="form-group">
+      <label for="count">Count:</label>
+      <input id="count" formControlName="count" type="number" placeholder="Enter rate"
+        class="form-input" />
+    </div>
+    <button type="submit" class="submit-button" [disabled]="productForm.invalid" (click)="addProduct()">
+      Register Product
+    </button>
+  </form>
+</div>

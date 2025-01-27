@@ -1,0 +1,145 @@
+<div class="report-container">
+  <h1>Report Form</h1>
+  <form [formGroup]="reportForm" (ngSubmit)="getReport()">
+    <div class="form-group">
+      <label for="customerName">Customer Name</label>
+      <input 
+        type="text" 
+        id="customerName" 
+        formControlName="customerName" 
+        name="customerName" 
+        placeholder="Enter Customer Name" 
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="dateSale">Date of Sale</label>
+      <input 
+        type="date" 
+        formControlName="dateSale" 
+        id="dateSale" 
+        name="dateSale" 
+      />
+    </div>
+
+    <div class="form-group">
+      <button 
+        type="submit"
+        [disabled]="reportForm.invalid">
+        Submit
+      </button>
+    </div>
+  </form>
+
+  <div class="results-container">
+    <h2>Results  - Total: {{total | currency}}</h2>
+    <div class="data-grid" *ngIf="{show}">
+      <div class="data-row" *ngFor="let report of reports">
+        <div><strong>Order:</strong> {{ report.orderItems.id.slice(0, 4) }}</div>
+        <div><strong>Customer Name:</strong> {{ report.orderItems.cart.customer.name }}</div>
+        <div><strong>Is Cancelled:</strong> {{ report.orderItems.cart.isCancelled ? 'Yes' : 'No' }}</div>
+        <div>
+          <strong>Products:</strong>
+          <ul>
+            <li>
+              {{ report.product.title }} - {{ report.quantity }} units at {{ report.product.price | currency }} each
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p *ngIf="!reports || reports.length === 0">No results to display. Fill the form and submit to see the results.</p>
+  </div>
+</div>
+
+<style>
+  .report-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+
+  .results-container {
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .data-grid {
+    display: grid;
+    gap: 15px;
+    background-color: #2a2a2a;
+    padding: 15px;
+    border: 1px solid #444;
+    border-radius: 8px;
+  }
+
+  .data-row {
+    padding: 15px;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background-color: #333;
+    color: #fff;
+  }
+
+  ul {
+    padding-left: 20px;
+    list-style: none;
+  }
+
+  ul li {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: #444;
+    border-radius: 4px;
+  }
+
+  h2 {
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+</style>

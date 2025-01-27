@@ -1,0 +1,35 @@
+<div class="form-container">
+  <h3 class="form-title">Products Registered</h3>
+
+  <!-- Display the product list -->
+  <div id="listProduct">
+    <div *ngFor="let product of getPagedProducts()" class="product-card">
+      <div style="display: none;">
+        <p>{{product.id}}</p>
+      </div>
+      <div class="product-header">
+        <h4>{{ product.title }}</h4>
+      </div>
+      <div class="product-header">
+        <h4>{{ product.description }}</h4>
+      </div>
+      <div class="product-body">
+        <p><strong>Unit Price:</strong> {{ product.price }}</p>
+      </div>
+      <!-- Edit Button -->
+      <div class="product-footer">
+        <button (click)="editProduct(product)"  class="edit-btn">Edit</button>
+      </div>
+      <div class="product-footer">
+        <button (click)="removeProduct(product)"  class="edit-btn">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination controls -->
+  <div class="pagination-controls">
+    <button (click)="goToPage(currentPage - 1)" [disabled]="">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="goToPage(currentPage + 1)" [disabled]="">Next</button>
+  </div>
+</div>

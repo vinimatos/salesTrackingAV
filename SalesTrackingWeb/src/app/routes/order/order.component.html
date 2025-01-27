@@ -1,0 +1,43 @@
+<div class="form-container">
+  <h3 class="form-title">Order Registration Form</h3>
+
+  <form [formGroup]="orderForm" class="order-register-form">
+
+    <div class="form-group">
+      <label for="customerSelect">Select Customer:</label>
+      <select id="customerSelect" formControlName="customerId" class="form-input">
+        <option *ngFor="let customer of customers" [value]="customer.id">{{ customer.name }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Select Product(s):</label>
+      <div *ngFor="let product of products">
+        <input
+          type="checkbox"
+          [id]="'product_' + product.id"
+          [value]="product.id"
+          (change)="onCheckboxChange($event, product)"
+        />
+        <label [for]="'product_' + product.id">{{ product.title + ' - ' + product.price }}</label>
+      
+        <!-- Input for quantity, with safe check -->
+        <div *ngIf="isProductSelected(product.id)">
+          <ng-container *ngIf="getProductQuantityControl(product.id) as quantityControl">
+            <input
+              type="number"
+              [formControl]="quantityControl"
+              [min]="1"
+              [max]="20"
+              placeholder="Quantity"
+            />
+          </ng-container>
+        </div>
+      </div>
+      
+    </div>
+    
+    <button type="submit" class="submit-button" [disabled]="orderForm.invalid" (click)="addOrder()">
+      Register
+    </button>
+  </form>
+</div>

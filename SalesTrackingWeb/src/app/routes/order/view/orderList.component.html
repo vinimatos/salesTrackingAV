@@ -1,0 +1,30 @@
+<div class="form-container">
+  <h3 class="form-title">Order Registered</h3>
+
+  <!-- Display the customer list -->
+  <div id="listCustomer">
+    <div *ngFor="let order of getPagedOrders()" class="customer-card">
+      <div style="display: none;">
+        <p>{{order.id}}</p>
+      </div>
+    
+      <div class="customer-body">
+        <p><strong>Order Number</strong> {{ order.id.slice(0,4) }}</p>
+        <p><strong>Product</strong> {{ order.product.title }}</p>
+        <p><strong>Customer:</strong> {{ order.orderItems.cart.customer.name }}</p>
+        <p><strong>Address:</strong> {{ order.orderItems.cart.customer.address.street }} -  {{ order.orderItems.cart.customer.address.number }}</p>
+      </div>
+      <!-- Edit Button -->
+      <div class="customer-footer">
+        <button (click)="editOrder(order)" class="edit-btn">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination controls -->
+  <div class="pagination-controls">
+    <button (click)="goToPage(currentPage - 1)" [disabled]="isFirstPage()">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="goToPage(currentPage + 1)" [disabled]="isLastPage()">Next</button>
+  </div>
+</div>

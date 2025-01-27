@@ -1,0 +1,19 @@
+<div class="form-container">
+  <h2>Edit Order</h2>
+  <form [formGroup]="editForm">
+    <div class="form-field">
+      <label for="saleNumber">Order Number</label>
+      <input id="saleNumber" value="{{saleNumber.slice(0,4)}}"  disabled/>
+    </div>
+    
+    <div class="form-field">
+      <label for="cancel">Cancel</label>
+      <input type="checkbox" id="IsCancelled" formControlName="IsCancelled" />
+    </div>
+
+    <div class="form-actions">
+      <button class="cancel-btn" (click)="close()">Cancel</button>
+      <button class="save-btn" (click)="save()">Save</button>
+    </div>
+  </form>
+</div>
